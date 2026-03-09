@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Supplements Store</title>
+    <style>
+        /* CSS Basics: Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4CAF50; /* Green theme for organic feel */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* Hero Section for Featured Product */
+        #hero {
+            background-color: #e8f5e9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #hero h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        #hero button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #hero button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Products Section */
+        #products {
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .product-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            margin-bottom: 15px;
+        }
+
+        .product-card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product-card button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Cart Section */
+        #cart {
+            padding: 40px 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        #cart h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #cart-items {
+            list-style: none;
+        }
+
+        #cart-items li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #total {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #checkout-btn {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        #checkout-btn:hover {
+            background-color: #388E3C;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #products {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Organic Supplements Store</h1>
+        <p>Your source for clean, natural health products</p>
+    </header>
+
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#products">Products</a>
+        <a href="#cart">Cart</a>
+    </nav>
+
+    <section id="hero">
+        <h2>Our Flagship Product: Organic No-Pesticides Whey Protein</h2>
+        <p>Pure, grass-fed whey protein with no herbicides, pesticides, or artificial additives. Boost your workouts naturally!</p>
+        <p>Price: $49.99</p>
+        <button onclick="addToCart('Organic Whey Protein', 49.99)">Add to Cart</button>
+    </section>
+
+    <section id="products">
+        <h2 style="width: 100%; text-align: center;">Other Supplements</h2>
+        <div class="product-card">
+            <h3>Vitamin D3</h3>
+            <p>High-potency, organic vitamin D for immune support.</p>
+            <p>Price: $19.99</p>
+            <button onclick="addToCart('Vitamin D3', 19.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <h3>Omega-3 Fish Oil</h3>
+            <p>Sustainably sourced, no heavy metals.</p>
+            <p>Price: $29.99</p>
+            <button onclick="addToCart('Omega-3 Fish Oil', 29.99)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <h3>Multivitamin</h3>
+            <p>All-natural daily multivitamin blend.</p>
+            <p>Price: $24.99</p>
+            <button onclick="addToCart('Multivitamin', 24.99)">Add to Cart</button>
+        </div>
+    </section>
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p id="total">Total: $0.00</p>
+        <button id="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Organic Supplements Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for Cart Functionality
+        let cart = []; // Array to hold cart items
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            updateCart();
+            alert(`${productName} added to cart!`);
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = ''; // Clear existing items
+            let total = 0;
+
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+
+            document.getElementById('total').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                alert('Proceeding to checkout... (This is a mock checkout. In a real site, integrate Stripe or PayPal here.)');
+                // Reset cart for demo
+                cart = [];
+                updateCart();
+            }
+        }
+    </script>
+
+</body>
+</html>
